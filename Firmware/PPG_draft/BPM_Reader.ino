@@ -37,6 +37,8 @@ void loop() {
         Serial.print("Heart Rate: ");
         Serial.print(heartRate);
         Serial.println(" BPM");
+
+    
     }
 
     Serial.print("IR Value: ");
