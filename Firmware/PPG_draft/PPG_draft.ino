@@ -13,6 +13,13 @@ SparkFun_Bio_Sensor_Hub bioHub(resPin, mfioPin);
 
 bioData body;  
 
+/*
+void setLedIntensity(uint8_t red, uint8_t ir) {
+    bioHub.writeRegister(0x0C, red); // 0x0C: LED1 (Red) Amplitude Register
+    bioHub.writeRegister(0x0D, ir);  // 0x0D: LED2 (IR) Amplitude Register
+}
+*/
+
 void setup(){
 
   Serial.begin(115200);
@@ -25,7 +32,7 @@ void setup(){
     Serial.println("Could not communicate with the sensor!!!");
 
   Serial.println("Configuring Sensor...."); 
-  int error = bioHub.configBpm(MODE_ONE); // Configuring just the BPM settings. 
+  int error = bioHub.configBpm(MODE_TWO); // Configuring just the BPM settings. 
   if(!error){
     Serial.println("Sensor configured.");
   }
@@ -36,8 +43,7 @@ void setup(){
   }
 
   //Adjust LED Intensity
-  biohub.setPulseAmplitudeRed(0xE0);
-  biohub.setPulseAmplitudeIR(0xC0);
+  //setLedIntensity();
 
   // Data lags a bit behind the sensor, if you're finger is on the sensor when
   // it's being configured this delay will give some time for the data to catch

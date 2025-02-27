@@ -1,3 +1,4 @@
+/*
 #include <Wire.h>
 #include "MAX30105.h"
 #include "heartRate.h"
@@ -45,3 +46,4 @@ void loop() {
     Serial.println(irValue);
     delay(100);
 }
+*/
